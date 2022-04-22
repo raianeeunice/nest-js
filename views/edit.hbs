@@ -1,0 +1,25 @@
+{{> header}}
+
+<div class="container" style="width: 30%; margin: 100px auto 0 auto">
+    <form action="/tasks/{{task.id}}?_method=Patch" method="POST">
+        <div class="mb-3">
+            <label class="form-label">Tarefa:</label>
+            <input type="text" class="form-control" name="title" id="title" value="{{task.title}}"
+                placeholder="Nome da tarefa">
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Descrição:</label>
+            <input type="text" class="form-control" name="description" id="description" value="{{task.description}}"
+                placeholder="Descrição da tarefa">
+        </div>
+        <select class="custom-select" id="status" name="status">
+            <option selected>{{task.status}}</option>
+            <option value="OPEN">OPEN</option>
+            <option value="IN_PROGRESS">IN_PROGRESS</option>
+            <option value="DONE">DONE</option>
+        </select>
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+</div>
+
+{{> footer}}
